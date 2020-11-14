@@ -1,0 +1,6 @@
+1.  devops merupakan proses dalam pengembangan suatu aplikasi dimulai dari planning,rilis,dan monitor
+    bagi perusahaan yang menggunakan perangkat lunak sebagai layanan atau sarana untuk berinteraksi dengan pelanggan,
+    maka devops ini sangat penting agar perusahaan dapat merancang,membangun,bahkan mengembangkan aplikasinya dengan terstruktur,tepat dan mudah.
+https://musaamin.web.id/apa-itu-devops/
+
+    
