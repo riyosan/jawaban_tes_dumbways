@@ -2,5 +2,85 @@
     bagi perusahaan yang menggunakan perangkat lunak sebagai layanan atau sarana untuk berinteraksi dengan pelanggan,
     maka devops ini sangat penting agar perusahaan dapat merancang,membangun,bahkan mengembangkan aplikasinya dengan terstruktur,tepat dan mudah.
 https://musaamin.web.id/apa-itu-devops/
+gambar01
 
+2.  bisa menggunakan perintah (ag "Search query") atau (ag 'Search query' / -l),contoh saya mencari kata "saya riyo",tapi sebelumnya lakukan instal ag terlebih dahulu (apt           install silversearcher-ag)
+https://stackoverflow.com/questions/16956810/how-do-i-find-all-files-containing-specific-text-on-linux
+gambar 02 dan gambar 02.1
+
+3.  load balancing merupakan teknik untuk mendistribusikan lalu lintas koneksi,load balancing digunakan menentukan server mana yang sehat pada backend yang akan dipilih.
+    ssl(Secure Socket Layer) merupakan teknologi yang membuat jalur terenkripsi antara website dan web browser,ibarat rumah yang dikelilingi pagar.
+    contoh-contoh web server:
+    -apache
+    -litespeed
+    -glassfish
+    -nginx
+https://www.kreatifa.com/apa-itu-load-balancing/
+
+4.  docker merupakan salah satu platform container,sedangkan vmware merupakan platform virtualisasi yang digunakan untuk membuat virtual machine, docker dipakai ketika ingin         membuat aplikasi yang berbasis container atau hanya berjalan pada 1 kernel maka gunakan docker, namun jika ingin membuat aplikasi berbasis virtual machine atau aplikasi yang     berjalan pada beberapa kernel maka gunakan vmware.
+
+5.  -Mengubah Port SSH,Secara default port SSH yaitu 22, dengan mengganti ssh default maka akan mengurangi peretas yang ingin meretas ssh default.
+    -menggunakan software terbaru, agar meminimalisir adanya bug pada software lama.
+    -menggunakan firewall,firewall ibarat tembok yang membatasi komputer dari jaringan internet.
+    
+6.  monitor.us, tools ini merupakan salah satu server monitoring yang gratis,dan bisa berbagi layar antar komputer,tools ini juga bisa menampilkan cpu, memori, disk, dan             bandwidth.
+
+7.  DNS merupakan sistem yang mengubah ip addres komputer menjadi url sehingga nyaman untuk pengguna, jika hendak mengakses sebuat website,maka pengguna seharusnya mengetikkan ip address dari server website tersebut,dengan adanya dns maka pengguna cukup mengetikkan alamat saja,contohnya seperti website yang saya gunakan seharusnya adalah gambar 07.1
+dengan adanya dns maka saya cukup mengetikkan seperti gambar 07.2
+    
+
+8.  Instalasi web dan dns Server
+-siapkan ubuntu server(disini saya memakai virtualbox untuk menginstal ubuntu server)
+gambar 8.1
+
+-masuk ke server melalui putty agar bisa copy paste perintah(di virtualbox tidak bisa copy paste perintah)
+gambar 8.2
+
+-update ubuntu (apt update)
+
+-setting ip dhcp ke ip statik (nano /etc/netplan/50-cloud-init.yaml)
+gambar 8.3
+
+-save netplan apply
+
+-install bind  (apt install bind9)
+ 
+-edit zone (nano /etc/bind/named.conf.local)
+gambar 8.4
+
+-membuat informasi domain
+-copykan file db.local (cp /etc/bind/db.local /etc/bind/db.dumbways-riyosanto.xyz.com) dan edit (nano /etc/bind/db.dumbways-riyosanto.xyz)
+
+-Copy dan rename file db.255 menjadi ptr.db (cp /etc/bind/db.255 /etc/bind/ptr.db)
+dan edit (nano /etc/bind/ptr.db)
+gambar 8.5
+
+-Edit file resolv.conf (nano /etc/resolv.conf)
+gambar 8.6
+
+-melihat IP Address suatu domain (nslookup 192.168.17.106)
+gambar 8.7
+
+-Service restart (service bind9 restart)
+
+-Instalasi Apache2 (apt install apache2) dan cek statusnya (service apache2 status)
+gambar 8.8
+
+-install php (apt-get install php libapache2-mod-php php-mysql)
+
+-install mysql  (apt install mysql-server)
+
+-Konfigurasi Apache2 
+copy dan rename file 000-default.conf (cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/dumbways-riyosanto.xyz.conf)
+edit dumbways-riyosanto.xyz.conf (nano /etc/apache2/sites-available/dumbways-riyosanto.xyz.conf)
+gambar 8.9
+
+-buat file html sebagai tampilan webnya (nano /var/www/dumbways-riyosanto.xyz/index.html)
+
+-Aktifkan webserver dumbways-riyosanto.xyz (a2ensite dumbways-riyosanto.xyz.conf)
+
+-Restart apache (service apache2 restart)
+
+-web dan dns server sudah jadi
+gambar 08
     
